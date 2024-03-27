@@ -1,0 +1,66 @@
+
+   {% include "header.html" %}
+
+
+<!-- Iterate over books to display images -->
+{% for book in Books.all %}
+    <a href="#" data-bs-toggle="modal" data-bs-target="#bookModal{{ book.id }}">
+        {% if book.book_covers %}
+            <img src="{{ book.book_covers.url }}" alt="Book Cover" style="height: 300px; width: 350px;">
+        {% else %}
+            No Image Available
+        {% endif %}
+    </a>
+
+    <!-- Modal for book details -->
+    <div class="modal fade" id="bookModal{{ book.id }}" tabindex="-1" aria-labelledby="bookModalLabel{{ book.id }}" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="bookModalLabel{{ book.id }}">{{ book.title }}</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table table-light table-border">
+                       
+                        <tr>
+                            <th>Title</th>
+                            <td> {{book.title}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Author</th>
+                            <td> {{book.author}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Genre</th>
+                            <td> {{book.genre}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Price</th>
+                            <td> {{book.price}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>ISBN</th>
+                            <td> {{book.isbn}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Category</th>
+                            <td> {{book.category}}</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+
+{% include "footer.html" %}

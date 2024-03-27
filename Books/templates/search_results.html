@@ -1,0 +1,38 @@
+
+
+{% include "header.html" %}
+
+{% if query %}
+    <h2>Search Results for "{{ query }}"</h2>
+{% else %}
+    <h2>All Books</h2>
+{% endif %}
+
+{% if results %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Price</th>
+                <!-- Add more table headers as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in results %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.genre }}</td>
+                    <td>{{ book.price }}</td>
+                    <!-- Add more table data cells as needed -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No results found.</p>
+{% endif %}
+
+{% include "footer.html" %}

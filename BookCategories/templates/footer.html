@@ -1,0 +1,202 @@
+{% load static %}
+      <!-- this is the footer of this website -->
+      <!-- <style>
+        footer {
+          background-color: black;
+          color: white;
+          padding: 5px 0;
+          text-align: center;
+          min-height: fit-content;
+        }
+      
+        
+        .social_cons{
+          height: 50px;
+          width: 50px;
+        }
+        #general_footer{
+          width: 100%;
+        }
+        .footer_section_product{
+          width: 24.5%;
+          display: block;
+          margin-left: 24.8%;
+          background-color: aqua;
+          margin-top: -330px;
+
+        }
+
+        .footer_section_resoruces{
+          width: 24.5%;
+          display: block;
+          margin-left: 50%;
+          background-color: blueviolet;
+          margin-top: -176px;
+        }
+
+        .footer_section_social_media{
+          width: 24.5%;
+          display: block;
+          float: right;
+          background-color: brown;
+          margin-right: 0%;
+          margin-top: -176px;
+        }
+
+        .footer_section_logo{
+          width: 24.5%;
+          display: block;
+          margin-left: 0%;
+          background-color: antiquewhite;
+          border-radius: 2px;
+        }
+
+      </style>
+       -->
+      
+       <style>
+
+       
+       footer {
+        background-color: black;
+        color: white;
+        padding: 5px 0;
+        text-align: center;
+      }
+      
+      #general_footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      
+      .footer_section {
+        flex: 1 0 24%;
+        margin-bottom: 20px;
+      }
+      
+      .footer_section_logo img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+      }
+      
+        /* Add media queries for responsiveness */
+    @media (max-width: 576px) {
+      .social_cons {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (min-width: 577px) and (max-width: 768px) {
+      .social_cons {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .social_cons {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+      /* Media queries for responsiveness */
+      @media (max-width: 768px) {
+        .footer_section {
+          flex-basis: 49%;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .footer_section {
+          flex-basis: 100%;
+        }
+      }
+
+      .logo-circle {
+      width: 300px; /* Adjust size as needed */
+      height: 300px; /* Adjust size as needed */
+      border-radius: 50%; /* Make it circular */
+      object-fit: cover; /* Maintain aspect ratio */
+    }
+
+      
+    </style>
+      
+      <footer>
+
+        
+        <div id="general_footer">
+          <!-- Logo Section -->
+          <div class="footer_section_logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo of this system" style="width: 280px; height: 330px;" class="logo-circle">
+          </div>
+    
+          <!-- Products Section -->
+          <div class="footer_section_product">
+            <h1>Products</h1>
+            <ol style="list-style-type: decimal;">
+              <li><a href="product_page_url">The Great Gatsby</a></li>
+              <li><a href="product_page_url">To Kill a Mockingbird</a></li>
+              <li><a href="product_page_url">1984</a></li>
+              <li><a href="product_page_url">Pride and Prejudice</a></li>
+              <li><a href="product_page_url">The Catcher in the Rye</a></li>
+              <li><a href="product_page_url">The Hobbit</a></li>
+              <li><a href="product_page_url">The Lord of the Rings</a></li>
+              <li><a href="product_page_url">Harry Potter and the Sorcerer's Stone</a></li>
+              <li><a href="product_page_url">To Kill a Mockingbird</a></li>
+              <li><a href="product_page_url">The Hunger Games</a></li>
+            </ol>
+          </div>
+          
+    
+          <!-- Resources Section -->
+          <div class="footer_section_resources">
+            <h1>Resources</h1>
+            <ul style="list-style-type: disc;">
+              <li><a href="https://www.z-lib.org/">Z-Library</a></li>
+              <li><a href="https://openlibrary.org/">Open Library</a></li>
+              <li><a href="https://www.gutenberg.org/">Project Gutenberg</a></li>
+              <li><a href="https://www.archive.org/">Internet Archive</a></li>
+              <li><a href="https://www.bibliomania.com/">Bibliomania</a></li>
+              <li><a href="https://manybooks.net/">ManyBooks</a></li>
+              <li><a href="https://www.bookrix.com/">BookRix</a></li>
+              <li><a href="https://www.librarything.com/">LibraryThing</a></li>
+              <li><a href="https://www.free-ebooks.net/">Free-eBooks.net</a></li>
+              <li><a href="https://www.smashwords.com/">Smashwords</a></li>
+            </ul>
+          </div>
+          
+    
+          <!-- Social Media Section -->
+          <div class="footer_section_social_media">
+            <h1>Support me on Social Media</h1>
+            <a href="https://www.facebook.com/yourpage"><img class="social_cons" src="{% static 'images/socialmedia/facebook.png' %}" alt="Facebook icon"></a>
+            <br>
+            <a href="mailto:youremail@example.com"><img class="social_cons" src="{% static 'images/socialmedia/gmail.png' %}" alt="Gmail icon"></a>
+            <br>
+            <a href="https://www.instagram.com/yourusername"><img class="social_cons" src="{% static 'images/socialmedia/insta.png' %}" alt="Instagram icon"></a>
+            <br>
+            <a href="https://www.linkedin.com/in/yourprofile"><img class="social_cons" src="{% static 'images/socialmedia/linkden.png' %}" alt="LinkedIn icon"></a>
+            <br>
+            <a href="https://t.me/yourchannel"><img class="social_cons" src="{% static 'images/socialmedia/telegram.png' %}" alt="Telegram icon"></a>
+            <br>
+            <a href="https://twitter.com/yourusername"><img class="social_cons" src="{% static 'images/socialmedia/twiter.png' %}" alt="Twitter icon"></a>
+            <br>
+            <a href="https://wa.me/yourphonenumber"><img class="social_cons" src="{% static 'images/socialmedia/whatsapp.png' %}" alt="WhatsApp icon"></a>
+            <br>
+            <a href="https://www.youtube.com/channel/yourchannel"><img class="social_cons" src="{% static 'images/socialmedia/yout.png' %}" alt="YouTube icon"></a>
+            
+
+          </div>
+        </div>
+      </footer>
+     <!-- add bootstrap JavaScript file -->
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    </body>
+</html>

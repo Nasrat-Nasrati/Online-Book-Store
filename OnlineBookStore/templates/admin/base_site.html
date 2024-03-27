@@ -1,0 +1,64 @@
+<!-- 
+
+  {% extends "admin/base_site.html" %}
+
+{% load i18n %}
+
+{% block extrahead %}
+{{ block.super }}
+
+<style>
+    .language-form {
+        display: inline-block;
+    }
+    .language-label {
+        display: inline-block;
+        margin-right: 5px;
+    }
+    .language-select {
+        display: inline-block;
+    }
+</style>
+
+{% endblock %}
+
+{% block userlinks %}
+{{ block.super }}
+<form class="language-form" id="languageForm" method="post" action="{% url 'set_language' %}">
+    {% csrf_token %}
+    <label class="language-label" for="language">Lang:</label>
+    <select name="language" id="language" class="language-select">
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for lang in languages %}
+            <option value="{{ lang.code }}">{{ lang.name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Change Language</button>
+</form>
+{% endblock %} -->
+
+
+
+
+
+
+
+{% load i18n %}
+
+<div>
+    <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ request.path }}">
+        <select name="language" id="language">
+            {% get_current_language as current_language %}
+            {% get_available_languages as available_languages %}
+            {% get_language_info_list for available_languages as languages %}
+            {% for language in languages %}
+                <option value="{{ language.code }}" {% if language.code == current_language %}selected{% endif %}>
+                    {{ language.name_local }} ({{ language.code }})
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit">{% trans 'Change Language' %}</button>
+    </form>
+</div>

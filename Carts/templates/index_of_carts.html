@@ -1,0 +1,22 @@
+{% include "header.html" %}
+    <table class="table table-border">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>User Name</th>
+                <th>Book</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for CartItem in carts.all %}
+            <tr>
+                <td>{{ CartItem.id }}</td>
+                <td>{{ CartItem.user }}</td>
+                <td>{{ CartItem.book }}</td>
+                <td>{{ CartItem.quantity }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% include "footer.html" %}

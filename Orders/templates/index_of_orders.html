@@ -1,0 +1,28 @@
+{% include "header.html" %}
+   
+
+<table class="table table-border">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>User Name</th>
+            <th>Book</th>
+            <th>Order Date</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders.all %}
+        <tr>
+            <td>{{order.id}}</td>
+            <td>{{order.user}}</td>
+            <td> {{order.book}}</td>
+            <td> {{order.order_date}}</td>
+            <td>{{order.quantity}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+    {% include "footer.html" %}
+    

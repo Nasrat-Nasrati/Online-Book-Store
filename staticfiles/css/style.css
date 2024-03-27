@@ -1,0 +1,30 @@
+
+/* Styling the table */
+#first_table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Styling the table header */
+  #first_table thead {
+    background-color: #f2f2f2;
+   
+  }
+  
+  /* Styling the table header cells */
+  #first_table th {
+    padding: 12px;
+    text-align: center;
+  }
+  
+  /* Styling the table data cells */
+  #first_table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Styling alternate rows */
+  #first_table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
